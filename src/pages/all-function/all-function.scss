@@ -1,0 +1,48 @@
+page-all-function {
+  $vm_base: 375;
+  @function vm($px) {
+    @return ($px / $vm_base) * 100vw;
+  }
+  .itemName{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: vm(48);
+    padding: vm(12) vm(15);
+    font-size: vm(14);
+    color: #7A7A7A ;
+    background-color: #F0F0F0 ;
+  }
+  .firstLoop{
+    width: 100%;
+    height:vm(235);
+    .myGrid{
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      .myCol{
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .secondLoop{
+    width: 100%;
+    height: vm(159);
+    .myGrid{
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      .myCol{
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+

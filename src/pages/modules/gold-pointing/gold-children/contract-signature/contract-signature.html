@@ -1,0 +1,57 @@
+<!--
+  Generated template for the ContractSignaturePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>合同签章</ion-title>
+  </ion-navbar>
+  <div class="myType ready"  id="mynavaaa">
+    <button   (click)="onPageTypeChange(0,infiniteScroll)" [class.already]="already == 0">
+      全部
+    </button>
+    <button style="" (click)="onPageTypeChange(1,infiniteScroll)" [class.already]="already == 1">
+      未生效
+    </button>
+    <button style="" (click)="onPageTypeChange(2,infiniteScroll)" [class.already]="already == 2">
+      已生效
+    </button>
+  </div>
+</ion-header>
+
+
+<ion-content id="myCon">
+  <div *ngIf="!showNoContent" class="myContent">
+    <div class="content">
+      <div *ngFor="let item of conlist"  class="listitem">
+        <div class="buttonHeader">
+          <span class="name">保理合同号：{{item.financingNo}}</span>
+          <span [class.statusA]="item.myStatus=='已生效'"
+                [class.statusN]="item.myStatus=='甲方已签'"
+                [class.statusB]="item.myStatus=='乙方已签'"
+                [class.statusC]="item.myStatus=='已缔约'"
+                [class.statusD]="item.myStatus=='已修改'"
+                [class.statusE]="item.myStatus=='已废除'"
+                [class.statusF]="item.myStatus=='未缔约'">{{item.myStatus}}</span>
+        </div>
+        <button ion-item  (click)="itemTapped($event, item)">
+          <div class="itemmess "><img src="assets/imgs/企.png" style="height:  4vw;width: 4vw;margin-right: 2.666vw">{{item.companyId}}</div>
+          <div class="itemmess"><img src="assets/imgs/金.png" style="height:  4vw;width: 4vw;margin-right: 2.666vw">{{item.loanTotal}}</div>
+          <div class="itemmess"><img src="assets/imgs/时间.png" style="height:  4vw;width: 4vw;margin-right: 2.666vw">{{item.startDate}} 至 {{item.endDate}}</div>
+        </button>
+      </div>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)" >
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="加载中"
+        ></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  </div>
+  <div *ngIf="showNoContent" class="noContent">
+    <img src="assets/imgs/noContent.png" class="myNoContent">
+  </div>
+</ion-content>

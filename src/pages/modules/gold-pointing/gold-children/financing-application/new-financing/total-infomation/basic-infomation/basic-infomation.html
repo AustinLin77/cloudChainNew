@@ -1,0 +1,88 @@
+<!--
+  Generated template for the BasicInfomationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>基本信息</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only  (click)="submitFinancing()"  style="font-size: 3.733vw;color: #FF5F07">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="overflow: scroll;background-color: #eeeeee">
+  <div style="margin: 10px;border: 1px solid #eeeeee;">
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>卖方</div>
+      <div class="loopHeadM">
+        {{data.sellerName}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>统一社会信用代码</div>
+      <div class="loopHeadM">
+        {{data.socialCreditCode}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>买方</div>
+      <div class="loopHeadM" >
+        {{data.buyerName}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>买方对应事业部</div>
+      <div class="loopHeadM" >
+        {{data.orgDept}}
+      </div>
+    </div>
+  </div>
+  <div style="margin: 10px;border: 1px solid #eeeeee;">
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>融资申请人姓名</div>
+      <div class="loopHeadM">
+        <input  class="myInput" [(ngModel)]="applicantName" placeholder="请填写申请人姓名">
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>申请人联系电话</div>
+      <div class="loopHeadM">
+        <input  class="myInput" [(ngModel)]="telephone" placeholder="请填写申请人联系电话" type="tel" (blur)="checkTel()">
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span style="color: red;margin-right: 5px;height: 100%;display:flex; align-items: center;width: 6px"></span>应付会计</div>
+      <div class="loopHeadM" (click)="mySelect()">
+        <span *ngIf="comfirmName==''">请选择</span>
+        <span>{{comfirmName}}</span>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>
+<div class="help" *ngIf="showSelect" (click)="closeSelect()"></div>
+<div class="bottomSelect" *ngIf="showSelect">
+  <div class="bottomSelect_toolbar">
+    <ion-grid style="height: 100%;width: 100%">
+      <ion-row>
+        <ion-col col-4 class="myCol" style="color:#FF5F07;justify-content: flex-start" (click)="closeSelect()">取消</ion-col>
+        <ion-col col-4 class="myCol">选择候选人</ion-col>
+        <ion-col col-4 class="myCol" style="color:#FF5F07;justify-content: flex-end" (click)="comfirm()">确定</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="personList">
+    <div *ngFor="let i of personList" class="personItem" (click)="changeList(i)">
+      {{i.name}}
+    </div>
+  </div>
+</div>

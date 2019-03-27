@@ -1,0 +1,153 @@
+<!--
+  Generated template for the IssueManagementDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>融资申请单</ion-title>
+    <ion-buttons end (click)="myShowHandler()" *ngIf="showTool" >
+      <button ion-button icon-only style="font-size: 3.733vw;color: #FF5F07">
+        签收任务
+      </button>
+    </ion-buttons>
+    <ion-buttons end (click)="myHandler()"  *ngIf="showHandler">
+      <button ion-button icon-only style="font-size: 3.733vw;color: #FF5F07">
+        办理
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="myType ready"  id="mynavaaa">
+    <button   (click)="onPageTypeChange(1)" [class.already]="already == 1">
+      申请信息
+    </button>
+    <button style="" (click)="onPageTypeChange(2)" [class.already]="already == 2">
+      应收单据
+    </button>
+  </div>
+</ion-header>
+
+
+<ion-content >
+   <div *ngIf="already==1">
+     <div class="loopHead">
+       <div class="loopHeadP">申请公司</div>
+       <div class="loopHeadM">
+         {{financingApply.companyId}}
+       </div>
+     </div>
+     <div class="loopHead">
+       <div class="loopHeadP">综合服务费(%/年)</div>
+       <div class="loopHeadM" >
+         {{financingApply.ratio}}
+       </div>
+     </div>
+     <div class="loopHead">
+       <div class="loopHeadP">应收账款金额(元)</div>
+       <div class="loopHeadM" >
+         {{financingApply.receiptsTotal}}
+       </div>
+     </div>
+     <div class="loopHead">
+       <div class="loopHeadP">融资金额(元)</div>
+       <div class="loopHeadM" >
+         {{financingApply.loanTotal}}
+       </div>
+     </div>
+     <div class="loopHead">
+       <div class="loopHeadP">还款方式</div>
+       <div class="loopHeadM" >
+         {{financingApply.financeType}}
+       </div>
+     </div>
+     <div class="loopHead">
+       <div class="loopHeadP">收款账户</div>
+       <div class="loopHeadM" style="text-align: right;word-break:break-all;">
+         {{financingApply.gatherAccount.substring(4,financingApply.gatherAccount.length)}}
+       </div>
+     </div>
+     <div class="loopHead">
+       <div class="loopHeadP">起始日期</div>
+       <div class="loopHeadM" >
+         {{financingApply.startDate}}
+       </div>
+     </div>
+     <div class="loopHead">
+       <div class="loopHeadP">结束日期</div>
+       <div class="loopHeadM" >
+         {{financingApply.endDate}}
+       </div>
+     </div>
+     <div class="loopHead">
+       <div class="loopHeadP">保理融资方式</div>
+       <div class="loopHeadM" >
+         {{financingApply.financeType}}
+       </div>
+     </div>
+     <div class="loopHead">
+       <div class="loopHeadP">应收账款到期日</div>
+       <div class="loopHeadM" >
+         项目验收{{financingApply.deadline}}日内
+       </div>
+     </div>
+     <div class="loopHead">
+       <div class="loopHeadP">融资手续费(%/年)</div>
+       <div class="loopHeadM" >
+         {{financingApply.feeAmount}}
+       </div>
+     </div>
+   </div>
+   <div *ngIf="already==2">
+    <div class="loopHead">
+      <div class="loopHeadP">发票号</div>
+      <div class="loopHeadM">
+        {{receivableAccount.financingNo}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">类型</div>
+      <div class="loopHeadM" >
+        {{receivableAccount.type}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">卖方名称</div>
+      <div class="loopHeadM" >
+        {{receivableAccount.sellerName}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">买方名称</div>
+      <div class="loopHeadM" >
+        {{receivableAccount.buyerName}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">应收总金额</div>
+      <div class="loopHeadM" >
+        {{receivableAccount.preTaxTotal}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">更新日期</div>
+      <div class="loopHeadM" >
+        {{receivableAccount.updateDate}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">预计付款日期</div>
+      <div class="loopHeadM" >
+        {{receivableAccount.expectedPayDate}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">状态</div>
+      <div class="loopHeadM" >
+        {{data.stauts}}
+      </div>
+    </div>
+  </div>
+
+</ion-content>

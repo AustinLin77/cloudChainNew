@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true"  class="navbarSty">
+    <ion-buttons start *ngIf="chain==0">
+      <button ion-button icon-only (click)="ownerBack()" navPush >
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-icon name="arrow-back" class="navIcon" (click)="ownerBack()" navPush *ngIf="chain==1"></ion-icon>
+    <ion-title>集采列表</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only   (click)="myShowSift()">
+              <!--(click)="presentPopover($event)">-->
+        <ion-icon name="funnel" style="font-size: 18px"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color: #eeeeee;padding-bottom: 10px">
+  <div *ngFor="let option of data" style="height: 150px" (click)="goToPurchaseDetails(option.id)">
+    <div class="myDiv"  >
+      <div class="myInDiv">
+        <div class="nameDiv">{{option.name}}</div>
+        <div class="otherDiv">预期价格 : {{option.currency}}{{option.price}}/{{option.unit}}</div>
+        <div class="otherDiv">成团数量 : {{option.clustersNum}}{{option.unit}}</div>
+        <div class="areaDiv">
+          <ion-icon name="pin" class="myIcon"></ion-icon>{{option.deliveryAddress}}</div>
+      </div>
+      <div  style="min-height:90px; width: 90px;border-radius: 5px;border: solid 1px #eeeeee;display: flex;align-items: center;justify-content: center;margin-right: 10px">
+        <img src='{{option.imgPathList}}' style="max-height: 90px">
+      </div>
+      <!--<img class="myPic" src="{{}}">-->
+    </div>
+    <div class="myFootDiv">
+       <div [class.myFootInDiv]="option.gatherStatus=='进行中' " [class.myFootInTDiv]="option.gatherStatus=='已结束'"
+            [class.myFootInTTDiv]="option.gatherStatus=='已成团' " [class.myFootInTTTDiv]="option.gatherStatus=='未成团'"
+            [class.myFootInTTTTDiv]="option.gatherStatus=='未开始'">{{option.gatherStatus}}</div>
+    </div>
+  </div>
+  <div style="height: 10px;width: 100%;background: #eeeeee" *ngIf="flag===0"></div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="twoflag===0" >
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="all==0">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="all==1">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="all==2">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="all==3">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="all==4">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+<div class="help" *ngIf="showSift" (click)="closeSift()"></div>
+<div class="siftDiv" *ngIf="showSift">
+  <div class="siftTitle">筛选</div>
+  <div class="border">
+    <button ion-button outline style="height: 40px;width: 35%;" [class.click]="myAll===0" (click)="allF()">已结束</button>
+    <button ion-button outline style="height: 40px;width: 35%;margin-left: 20px" [class.click]="myAll===1" (click)="alreadyF()">已成团</button>
+    <button ion-button outline style="height: 40px;width: 35%;margin-top: 20px" [class.click]="myAll===2" (click)="unreadyF()">未成团</button>
+    <button ion-button outline style="height: 40px;width: 35%;margin-left: 20px;margin-top: 20px" [class.click]="myAll===3" (click)="onGoingF()">进行中</button>
+    <button ion-button outline style="height: 40px;width: 35%;margin-top: 20px" [class.click]="myAll===4" (click)="soonF()">未开始</button>
+  </div>
+  <div class="footer">
+    <ion-grid style="height: 100%;padding: 0">
+      <ion-row style="height: 100%">
+        <ion-col col-6 class="myCol">
+          <button  (click)="reset()" class="myButtonSecond">重置</button>
+        </ion-col>
+        <ion-col col-6 class="myCol">
+         <button  (click)="confirm()" class="myButtonFirst">确定</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+page-my-purchase {
+  .myDiv{
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+  }
+  .myPic{
+    width: 90px;
+    height: 90px;
+    justify-content: flex-end;
+    margin-right: 15px;
+  }
+  .myInDiv{
+    width: 85%;
+    height: 100px;
+    margin-left: 15px;
+    //padding-bottom: 10px;
+    color: #5E5E5E ;
+  }
+  .nameDiv{
+    height: 25px;
+    font-family: 微软雅黑;
+    font-weight: 200;
+    font-size: 16px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .otherDiv{
+    width: 100%;
+    color:#5E5E5E;
+    font-family:Arial;
+    font-size: 13px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .myIcon{
+    width: 14px;
+    height:14px;
+
+  }
+  .areaDiv{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color:#9E9C9C;
+  }
+  .myNoContent{
+    width: 120px;
+  }
+}

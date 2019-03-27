@@ -1,0 +1,33 @@
+page-reconciliation {
+  .myContent{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: 1px solid #eeeeee;
+    .start{
+      height: 100%;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      font-size: 14px
+    }
+    .end{
+      height: 100%;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .imgContent{
+        margin-right: 20px;
+        margin-left: 10px;
+        .myImg{
+          height: 10px;
+          width: 8px
+        }
+      }
+    }
+  }
+
+}

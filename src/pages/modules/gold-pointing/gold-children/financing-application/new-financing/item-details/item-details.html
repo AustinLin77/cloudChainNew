@@ -1,0 +1,77 @@
+<!--
+  Generated template for the ItemDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>发票详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div class="loopHead">
+    <div class="loopHeadP">发票号</div>
+    <div class="loopHeadM">
+      {{data.receivableOrderNo}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">卖方</div>
+    <div class="loopHeadM" >
+      {{data.sellerName}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">买方</div>
+    <div class="loopHeadM" >
+      {{data.buyerName}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">买方事业部</div>
+    <div class="loopHeadM" >
+      {{data.orgDept}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">融资申请日</div>
+    <div class="loopHeadM" >
+      {{data.sendDate}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">应收账款到期日</div>
+    <div class="loopHeadM" >
+      {{data.receivedDate}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">账期(天)</div>
+    <div class="loopHeadM" >
+      {{data.expectedPayDate}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">应收账款所属月份</div>
+    <div class="loopHeadM" >
+      {{data.ownMonth }}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">金额(元)</div>
+    <div class="loopHeadM" >
+      {{data.preTaxTotal}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">创建日期</div>
+    <div class="loopHeadM" >
+      {{data.createDate}}
+    </div>
+  </div>
+</ion-content>

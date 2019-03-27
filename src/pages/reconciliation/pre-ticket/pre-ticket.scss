@@ -1,0 +1,213 @@
+page-pre-ticket {
+  select{
+    border-radius: 5px;
+    border: 1px solid #eeeeee;
+    height: 30px;
+    width: 130px;
+    background: none;
+  }
+  .haveGif{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .myHaveGif{
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .help{
+    z-index: 9997;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+  }
+  .siftDiv{
+    z-index: 9999;
+    height: 100%;
+    width: 70%;
+    position: fixed;
+    top:0;
+    right: 0;
+    background-color: white;
+    -webkit-animation:righteaseinAnimate linear 0.5s ;
+    -moz-animation:righteaseinAnimate linear 0.5s; /* Firefox */
+    -o-animation:righteaseinAnimate linear 0.5s; /* Opera */
+
+    .condition{
+      font-size: 14px;
+      width: 100%;
+      height: 50px;
+      color: #101010 ;
+      padding-top: 30px;
+      padding-left: 15px;
+      font-weight: bold;
+    }
+    .userInput{
+      display: flex;
+      margin-left: 15px;
+      margin-top: 16px;
+      align-items: center;
+      margin-right: 15px;
+      .click{
+        border: 1px solid deepskyblue;
+        color: deepskyblue;
+      }
+      .inputNum{
+        text-indent: 2px;
+        width: 50%;
+        border: solid 1px #eee;
+        height: 30px;
+        line-height:30px;
+        border-radius: 3px;
+        background-color: white;
+        text-align: center;
+        font-size: 12px;
+      }
+      .middle{
+        width: 30px;
+      }
+    }
+    .siftTitle{
+      font-size: 18px;
+      width: 100%;
+      height: 50px;
+      padding-left: 20px;
+      line-height: 50px;
+      color: #333333;
+      border-bottom: 1px solid #cccccc;
+    }
+    .footer{
+      height: 50px;
+      position: absolute;
+      bottom:0;
+      width: 100%;
+      .myCol{
+        padding: 0;
+        height: 100%;
+        .myButtonFirst{
+          width: 100%;
+          height:100%;
+          background-color:deepskyblue;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 15px;
+          color: white
+        }
+        .myButtonSecond{
+          width: 100%;
+          height:100%;
+          background-color:white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 15px;
+          color: black;
+        }
+      }
+    }
+  }
+  input[type="date"]:before{
+    content: attr(placeholder);
+    color:darkgray;
+  }
+  @-webkit-keyframes righteaseinAnimate {
+    0% {
+      left:100%;
+      top:0;
+    }
+    //25% {
+    //  left:83.75%;
+    //  top:0;
+    //}
+    //50%{
+    //  left:67.5%;
+    //  top:0;
+    //}
+    //75% {
+    //  left:51.25%;
+    //  top:0;
+    //}
+    100% {
+      left:35%;
+      top:0;
+    }
+  }
+  .popover{
+    border: solid 1px #eeeeee;
+    position: fixed;
+    top:57px;
+    right: 17px;
+    height: 44px;
+    width: 130px;
+    z-index: 99999;
+    background-color: white;
+    opacity: 1;
+    .item{
+      width: 100%;
+      text-indent: 23px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+    }
+  }
+  .ready>button{
+    //background: #fff;
+    border-radius: 0;
+    position:absolute;
+    height: 100%;
+    width: 20%;
+  }
+  .ready>button:first-child{
+    top:0;
+    left: 15%;
+  }
+  .ready>button:last-child{
+    top:0;
+    right: 15%;
+  }
+  .already{
+    border-bottom: 3px solid deepskyblue;
+    //background-color: #eeeeee;
+  }
+  .unready{
+    //background-color: #eeeeee;
+    border-bottom: 3px solid deepskyblue;
+  }
+  button{
+    background-color: white;
+  }
+  .item-ios.item-block .item-inner {
+    border: none;
+  }
+  .remove{
+    position: absolute;
+    width:80px;
+    background:deepskyblue;
+    right: 0;
+    top: 0;
+    color:white;
+    text-align: center;
+    font-size: 18px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .myFade{
+    background-color: #eeeeee;
+    opacity:1;
+    transition: all 0.6s linear
+  }
+  .myNoFade{
+    background-color: #eeeeee;
+    opacity:0.2;
+  }
+}

@@ -1,0 +1,68 @@
+<!--
+  Generated template for the AddDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>添加明细行</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color: #eeeeee" >
+  <div style="background-color: white;margin: 10px">
+    <div class="loopHead">
+      <div class="loopHeadP">销售方全称</div>
+      <div class="loopHeadM">
+        {{sellerName}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">购买方全称</div>
+      <div class="loopHeadM" style="position: relative">
+        {{buyerName}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">贷款到期日</div>
+      <div class="loopHeadM">
+        {{myDateEnd}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">贷款所属月份</div>
+      <div class="loopHeadM">
+        {{preferMonth}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP">贷款对应事业部</div>
+      <div class="loopHeadM">
+        {{dept}}
+      </div>
+    </div>
+  </div>
+<div style="background-color: white;margin: 10px;">
+  <div class="loopHead">
+    <div class="loopHeadP">发票号码</div>
+    <div class="loopHeadM">
+      <input  class="myInput" [(ngModel)]="receivableOrderNo" placeholder="请填写发票号">
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">发票金额(含税)</div>
+    <div class="loopHeadM">
+      <input  class="myInput" [(ngModel)]="preTaxTotal" placeholder="请填写发票金额">
+    </div>
+  </div>
+
+  <div class="loopHeadP" style="height: 50px;">备注信息</div>
+  <textarea placeholder="请填写备注信息" class="myTips" [(ngModel)]="tips"></textarea>
+</div>
+
+  <div class="myBottomDiv" >
+    <button ion-button class="myButton" (click)="save()" >保存</button>
+    <div style="width: 13.333vw;height: 10vw"></div>
+    <button ion-button class="myButton" (click)="cancel()" style="background-color: #666666 ">取消</button>
+  </div>
+</ion-content>

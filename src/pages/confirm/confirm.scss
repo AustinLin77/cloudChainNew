@@ -1,0 +1,157 @@
+page-confirm {
+  .loopHead {
+    background-color: white;
+    height: 50px;
+    display: flex;
+    border-bottom: solid 1px #eeeeee
+  }
+  .loopHeadP {
+    font-family: 微软雅黑;
+    font-size: 16px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px;
+  }
+  .loopHeadM {
+    font-family: 宋体;
+    font-size: 14px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px;
+  }
+  .inputK {
+    border: hidden;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+  }
+  .total{
+    background-color: white;
+    display: flex;
+    height: 170px;
+    border-bottom: hidden;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .firstDiv{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px
+  }
+  .companyName{
+    height: 90%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-family: 宋体;
+    margin-left: 10px;
+  }
+  .applyDate{
+    font-family: 微软雅黑;
+    font-size: 16px;
+    color: black
+  }
+  .mySubmitButton{
+    height: 100%;
+    background-color:#FF525C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: white
+  }
+  .name{
+    font-family: 微软雅黑;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .secondDiv{
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: solid #eeeeee 1px;
+    background-color: #eeeeee
+  }
+  .pic{
+    height: 70px;
+    width: 20%;
+    margin-left: 10px
+  }
+  .innerDiv{
+    width: 80%;
+    padding: 10px;
+    height: 100%
+  }
+  .price{
+    font-size: 12px;
+    font-family: 宋体;
+    color: #488aff;
+    margin-top: 10px
+  }
+  .minus{
+    height: 22px;
+    width:22px;
+    margin-right: 1px;
+    background-color: white;
+    border: solid 1px #cccccc;
+    border-radius: 50%;
+    color: #cccccc
+  }
+  input{outline:medium;}
+  .inputNum{
+    background-color: white;
+    //
+    width: 35px;
+    line-height: 22px;
+    border:none;
+    height: 22px;
+    margin-right: 1px;
+    color: #FF525C;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .add{
+    height: 22px;
+    width:22px;
+    margin-right: 1px;
+    background-color: white;
+    border: solid 1px #cccccc;
+    border-radius: 50%;
+    color: #cccccc
+  }
+  .totalF{
+    height: 30px;
+    width: 100%;
+    text-align: right
+  }
+  .myCol{
+    display: flex;
+    color: black;
+    padding: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 16px
+  }
+  .submitC{
+    height: 100%;
+    background-color: #FF525C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px
+  }
+}

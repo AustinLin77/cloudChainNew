@@ -1,0 +1,124 @@
+<!--
+  Generated template for the InvoicePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{name}}</ion-title>
+    <ion-buttons end (click)="myShowTool()"  >
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="thirdCon" style="background-color: #eeeeee;">
+  <div *ngIf="!showNoContent" style="background-color: #eeeeee;" id="myScrollComtent">
+    <div  *ngFor="let ix of dataSource1  let i = index"
+          style="border-bottom: solid 10px #eeeeee;width: 100%;position: relative;user-select: none;background-color: white;height: 40.266vw">
+      <div [id]="i" (touchstart)='touchStart($event,i)'
+           (touchmove)='touchMove($event,i)'
+           class="borderD"
+           (click)="itemTapped($event, ix)">
+        <!--(touchend)='touchEnd($event,i)'-->
+
+        <div style="color: #333;
+     font-size: 4vw;
+    font-weight: bold;
+    width:80%;
+    height: 4.8vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;" *ngIf="ix.statementNo">{{ix.statementNo}}</div>
+        <div style="color: #333;
+     font-size: 4vw;
+    font-weight: bold;
+    width:80%;
+    height: 4.8vw;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;" *ngIf="!ix.statementNo">暂无单号</div>
+        <div>
+          <div style="padding-top: 2.666vw;color: #666;font-size: 3.733vw;padding-left: 0px">购方公司: {{ix.buyer}}</div>
+          <div style="color: #666;font-size: 3.733vw;padding-left:0px;margin-top: 1.333vw">发票号码: {{ix.invoiceNo}}</div>
+          <div style="margin-top: 1.333vw;color: #666;font-size: 3.733vw;padding-left: 0px">含税总额: {{ix.totalPriceTax}}</div>
+          <div style="color: #666;font-size: 3.733vw;padding-left:0px;margin-top:1.333vw">发票代码: {{ix.invoiceCode}}</div>
+        </div>
+      </div>
+      <div class="remove" id='remove' (click)="foresee(ix)">
+        预览
+      </div>
+      <!--<div style="position: absolute;top: 0;right: 0;height: 100%;display: flex;justify-content: center;align-items: center">-->
+      <!--&lt;!&ndash;<ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>&ndash;&gt;-->
+
+      <!--</div>-->
+    </div>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" >
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="加载中"
+      ></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+  <div *ngIf="showNoContent" class="noContent">
+    <img src="assets/imgs/noContent.png" class="myNoContent">
+  </div>
+  <div *ngIf="ifLoading" class="haveGif">
+    <img src="assets/imgs/myLoadingGif.gif" class="myHaveGif">
+  </div>
+
+</ion-content>
+<div class="popover" *ngIf="showTool">
+  <div class="item" (click)="sift(infiniteScroll)">筛选</div>
+  <div class="item" (click)="typeIn()">录入发票</div>
+  <!--<div class="item" (click)="exportTable()">导出报表</div>-->
+</div>
+<div class="help" *ngIf="showSift" (click)="reset()"></div>
+<div class="siftDiv" *ngIf="showSift">
+  <div class="siftTitle">筛选</div>
+  <div class="condition">开票时间</div>
+  <div class="userInput">
+    <input class="inputNum" type="date" placeholder="开始区间" [(ngModel)]="siftStartDate" (focus)="removePalce()" id="firstIn" (blur)="addPalce()">
+    <span style="margin-left: 5px;margin-right: 5px">—</span>
+    <input class="inputNum" type="date" placeholder="结束区间" [(ngModel)]="siftEndDate" (focus)="removePalce1()" id="secondIn" (blur)="addPalce1()">
+  </div>
+  <!--<div class="condition">购方公司</div>-->
+  <!--<div class="userInput">-->
+    <!--<select [(ngModel)]="buyerCompany" style="color:	#a8a8a8" (change)="selectDept()" >-->
+      <!--<option value="" disabled selected hidden >请选择购方公司</option>-->
+      <!--<option *ngFor="let its of companyList" [value]="its">{{its}}</option>-->
+    <!--</select>-->
+  <!--</div>-->
+  <!--<div class="condition">购方部门</div>-->
+  <!--<div class="userInput">-->
+    <!--<select [(ngModel)]="buyerDept" style="color:	#a8a8a8">-->
+      <!--<option value="" disabled selected hidden >请选择购方部门</option>-->
+      <!--<option *ngFor="let i of deptList" [value]="i">{{i}}</option>-->
+    <!--</select>-->
+  <!--</div>-->
+  <!--<div class="condition">地点</div>-->
+  <!--<div class="userInput">-->
+    <!--<select [(ngModel)]="address" style="color:	#a8a8a8">-->
+      <!--<option value="" disabled selected hidden >请选择地址</option>-->
+      <!--<option *ngFor="let i of addressList" [value]="i">{{i}}</option>-->
+    <!--</select>-->
+  <!--</div>-->
+  <div class="footer">
+    <ion-grid style="height: 100%;padding: 0">
+      <ion-row style="height: 100%">
+        <ion-col col-6 class="myCol">
+          <button  (click)="cancel()" class="myButtonSecond">重置</button>
+        </ion-col>
+        <ion-col col-6 class="myCol">
+          <button  (click)="confirm()" class="myButtonFirst">确定</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

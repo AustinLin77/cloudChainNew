@@ -1,0 +1,518 @@
+page-home {
+  .inviteDate{
+    color: #555555;
+    font-size: 11px;
+    padding-left: 23px;
+    padding-right: 23px;
+    text-align: left;
+    margin-top: 3px
+  }
+  .inviteInfo{
+    flex: 1;
+    font-size: 15px
+  }
+  .inviteStart{
+    width: 10px;
+    height: 18px;
+    line-height: 18px;
+    font-weight: bold
+  }
+  .inviteInclude{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 23px
+  }
+  .purchaseInfo{
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+  }
+  .purchaseStatus{
+    font-size: 12px;
+    margin-left: 2px;
+    background-color: #007aff;
+    color: white;
+    width: 40px;
+    padding: 1px;
+  }
+  .purchaseName{
+    font-size: 14px;
+    flex: 1;
+    overflow: scroll;
+    height: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: bold
+  }
+  .purchaseInclude{
+    width: 100%;
+    display: flex;
+    text-align: left;
+    margin-top: 10px
+  }
+  .applyDate{
+    font-size: 12px;
+    text-align: left;
+    margin-top: 5px
+  }
+  .applyInfo{
+    font-size: 12px ;
+    text-align: left;
+    margin-top: 10px
+  }
+  .applyName{
+    font-size: 14px;
+    font-weight:bold;
+    text-align: left;
+    height: 16px;
+    width: 100%;
+    overflow:scroll;
+    margin-top: 10px
+  }
+  .productionInfo{
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 5px;
+    text-overflow: ellipsis;
+  }
+  .imgBorder{
+    height:auto;
+    min-height:99px;
+    width: 100%;
+    border-radius: 5px;
+    border: solid 1px #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  .unLoad{
+    position: absolute;
+    top: 0;
+    right:15px;
+    height: 30px;
+    width: 22px
+  }
+  .myCol{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  .myGrid{
+    width: 100%;
+    height: 100%;
+    padding: 0
+  }
+  .loopContentFirst{
+    height: 46.667vw;
+    box-sizing: border-box;
+    margin-top: 0;
+    width: 100%;
+    padding-bottom: 4vw;
+    padding-top: 4vw;
+  }
+  .mySlidesPic{
+    width: 100%;
+    height: 44.8vw;
+    border-radius: 0
+  }
+  .slidesBorder{
+    height: 44.8vw;
+    margin-top: 0;
+  }
+  .myCancel{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .myMessage{
+    height: 24px;
+    width: 24px;
+  }
+  .myInput{
+    width:100%;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #eeeeee;
+    border: none;
+    padding-left: 45px
+  }
+  .searchBorder{
+    margin-left: 22px;
+    margin-right: 15px;
+    height: 35px;
+    width: 90%;
+    //line-height: 40px;
+    position: relative;
+  }
+  body{
+    overflow: hidden;
+  }
+  .hot{
+    background-color: #f53d3d;
+  }
+  .cold{
+    background-color: #488aff;
+  }
+  .onGoing{
+    background-color: deeppink;
+  }
+  .nextTime{
+    background-color: #488aff;
+  }
+  ::-webkit-scrollbar{
+    display:none;
+  }
+  .menu{
+    opacity:1;
+    width: 80%;
+    height: 523px;
+    position: absolute;
+    right: 0;top: 50px;
+    z-index: 99;
+    background-color:white
+  }
+  .bg{
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:#cccccc
+  }
+  .head{
+    //background-color: #00b0e8;
+    padding-left: 12px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative
+  }
+  .mail{
+    font-size: 25px;
+    color: white;
+    margin-left: 10px
+  }
+  .form{
+    margin-left: 10px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  .input{
+    width: 85%;
+    height: 32px;
+    padding-left: 10px;
+    border:  solid #7BA7AB;
+    border-radius: 5px;
+    outline: none;
+    background: #F9F0DA;
+    color: #9E9C9C;
+  }
+  .search{
+    position: absolute;
+    top: 5px;
+    left: 13px;
+    font-size: 24px;
+    color: #cccccc;
+    margin-left:5px
+  }
+  .ionMenu{
+    font-size: 30px;
+    color: deepskyblue;
+    position: absolute;
+    right: 23px;
+    top: 15px
+  }
+  .loop{
+    margin-top: 0;
+    width: 100%;
+    border-top: solid 10px #eee
+  }
+  .loopHead{
+    background-color: white;
+    height: 50px;
+    display: flex;
+    border-bottom: 1px #eeeeee solid;
+    //border-bottom: solid 1px #eeeeee
+  }
+  .loopHeadP{
+    font-family: 微软雅黑;
+    font-size: 17px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 23px
+  }
+  .loopHeadM{
+    font-family: 宋体;
+    font-size: 12px;
+    color: #999999;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 23px
+  }
+  .loopContent{
+    height: 180px;
+    margin-top: 0;
+    width: 100%
+  }
+  .loopContentBottom{
+    margin-top: 10px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .gird{
+    width: 100%;
+    height: 100%;
+    text-align: center
+  }
+  .ionrow {
+    height: 100%;
+    overflow-x: scroll;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+ #myIII::placeholder{
+   color: #cccccc;
+ }
+  .dSty {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .nameSty{
+    font-size: 14px;
+    flex:1;
+    overflow:scroll;
+    height: 16px;
+    text-align: left;
+    font-weight: bold;
+  }
+  .popSty{
+    font-size: 12px;
+    margin-left: 2px;
+    color: white;
+    width: 18px;
+    /* padding: 2px; */
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .myCan{
+    font-size: 16px;
+    color: deepskyblue;
+    position: absolute;
+    right: 35px;
+    top: 10px
+  }
+  .myInviteShow{
+    width: 100%;
+    height: 18.4vw;
+    padding-left: 4vw;
+    padding-right: 3.2vw;
+  }
+  .myAd{
+    width: 100%;
+    height: auto;
+    padding: 3.2vw;
+    background-color: #F0F0F0;
+    .myAdPic{
+      height: auto;
+      width: 93.333vw;
+    }
+  }
+  .myTb{
+    width: 100%;
+    height:55.2vw ;
+    display: flex;
+    align-items: center;
+    .myTbPic{
+      width: 100%;
+      height:48.8vw ;
+    }
+  }
+  .newTitle{
+    width: 100%;
+    height:15.466vw ;
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: flex-end;
+    .titlePic{
+      width: 100%;
+      height: 12vw;
+    }
+  }
+  .community{
+    width: 100%;
+    height: 38.666vw;
+    padding: 3.2vw;
+    background-color: #F0F0F0 ;
+  }
+  .productionLoop{
+    width: 100%;
+    height:76vw;
+    .firstLoop{
+      width: 100%;
+      height:39.2vw;
+      display: flex;
+      border-bottom: 1px solid #eeeeee;
+      .right{
+        height: 100%;
+        width: 50%;
+        .first{
+          width: 100%;
+          height: 50%;
+          display: flex;
+          .myPicBor{
+            width: 15.733vw;
+            height: 16.533vw;
+            margin-left: 12vw;
+            margin-top: 1.333vw;
+            .secondPic{
+              width: 15.733vw;
+              height: 16.533vw;
+            }
+          }
+          .name{
+            width: 12.8vw;
+            height: 5.866vw;
+            color: #363737 ;
+            font-size: 4.266vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-top:3.2vw ;
+            margin-left: 3.2vw;
+          }
+          .price{
+            margin-top:0.8vw ;
+            //width:13.2vw ;
+            height: 5.333vw;
+            color: #009DFA;
+            font-size: 3.733vw;
+            margin-left: 3.2vw;
+          }
+        }
+        .second{
+          width: 100%;
+          height: 50%;
+        }
+      }
+      .left{
+        height: 100%;
+        width: 50%;
+        border-right: 1px solid #eeeeee
+      ;
+        display: flex;
+        .innerLeft{
+          height: 100%;
+          width: 25.333vw;
+          .name{
+            margin-left: 5.866vw;
+            margin-top:6.666vw ;
+            width: 12.8vw;
+            height: 5.866vw;
+            color: #363737 ;
+            font-size: 4.266vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .price{
+            margin-left: 5.866vw;
+            margin-top:0.8vw ;
+            //width:13.2vw ;
+            height: 5.333vw;
+            color: #009DFA;
+            font-size: 3.733vw;
+          }
+          .status{
+            width:5.333vw ;
+            height: 4.266vw;
+            background-color: #FF6768;
+            color: white;
+            margin-left: 5.866vw;
+            margin-top:1.6vw ;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        .innerRight{
+          height: 100%;
+          flex: 1;
+          .myPic{
+            width: 23.2vw;
+            height: 31.466vw;
+            margin-top:4.8vw ;
+            .firstPic{
+              width: 23.2vw;
+              height: 31.466vw;
+            }
+          }
+        }
+      }
+    }
+    .secondLoop{
+      width: 100%;
+      height: 37.066vw;
+      display: flex;
+      .innerLoop{
+        height: 100%;
+        width: 25%;
+        .name{
+          width: 12.8vw;
+          height: 5.866vw;
+          color: #363737 ;
+          font-size: 4.266vw;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin-top:3.2vw ;
+          margin-left: 2.933vw;
+        }
+        .price{
+          margin-left: 2.933vw;
+          margin-top:0.8vw ;
+          //width:13.2vw ;
+          height: 5.333vw;
+          color: #009DFA;
+          font-size: 3.733vw;
+        }
+        .myPicBor{
+          margin-top: 1.6vw;
+          margin-left: 4vw;
+          width:18.133vw ;
+          height: 18.133vw;
+          .thirdPic{
+            width:12vw ;
+            height: 15vw;
+          }
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>新增</ion-title>
+    <ion-buttons end class="myNavButton">
+      <button ion-button icon-only>
+        确定
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="myContentHead">
+    头部信息
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>购方公司</div>
+    <div class="loopHeadM">
+      <input placeholder="请填写购方公司" class="myInput"  [(ngModel)]="companyOfBuyer">
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>购方部门</div>
+    <div class="loopHeadM">
+      <input placeholder="请填写购方部门" class="myInput"  [(ngModel)]="deptOfBuyer">
+    </div>
+  </div>
+  <div class="loopHead" style="position: relative">
+    <div class="loopHeadP"><span class="needed">*</span>入库时间</div>
+    <div class="loopHeadM">
+      <ion-datetime displayFormat="YYYY-MM-DD" placeholder="请选择入库时间" [(ngModel)]="inStoreDate" cancelText="取消" doneText="确定"> </ion-datetime>
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>类型</div>
+    <div class="loopHeadM" style="position: relative">
+      <ion-select [(ngModel)]="type" placeholder="请选择类型" cancelText="取消" okText="确定" [selectOptions]="selectOptions" class="mySelect" >
+        <ion-option value='{{item}}' *ngFor="let item of myType">{{item}}</ion-option>
+      </ion-select>
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">订单编号</div>
+    <div class="loopHeadM">
+      <input placeholder="请填写订单编号" class="myInput"  [(ngModel)]="orderNum">
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">送货单号</div>
+    <div class="loopHeadM">
+      <input placeholder="请填写送货单号" class="myInput"  [(ngModel)]="deliverNum">
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">规格型号</div>
+    <div class="loopHeadM">
+      <input placeholder="请填写规格型号" class="myInput"  [(ngModel)]="specifications">
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">物料编码</div>
+    <div class="loopHeadM">
+      <input placeholder="请填写物料编码" class="myInput"  [(ngModel)]="goodsNum">
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">采购人员</div>
+    <div class="loopHeadM">
+      <input placeholder="请填写采购人员" class="myInput"  [(ngModel)]="person">
+    </div>
+  </div>
+
+</ion-content>

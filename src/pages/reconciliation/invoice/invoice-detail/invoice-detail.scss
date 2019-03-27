@@ -1,0 +1,82 @@
+page-invoice-detail {
+  .noContent{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .myNoContent{
+      width: 120px;
+    }
+  }
+    .top{
+      height: 40px;
+      display: flex;
+    }
+    .top button{
+      flex: 1;
+      text-align: center;
+    }
+
+    .top button:hover{
+      border-radius: 0;
+      color: #007aff;
+      border-bottom: solid 3px #007aff;
+    }
+    .content{
+    }
+    button{
+      background: #fff;
+      border: none;
+      box-shadow: none;
+    }
+    .content ul li{
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 53px;
+      display: flex;
+      align-items: center;
+      border-bottom: solid 1px #eee;
+    }
+    .content ul li span:first-child{
+      width: 40%;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .content ul li span:last-child{
+      flex:1;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .palce .title{
+      height: 35px;
+      line-height: 35px;
+      padding-left: 10px;
+      background: #eee;
+    }
+    .tip{
+      height: 43px;
+      width: 100%;
+      background-color: #F0F0F0;
+      line-height: 43px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .footer{
+      width: 100%;
+      height: 55px;
+      line-height: 55px;
+      text-align: center;
+      font-size: 14px;
+      .myIcon{
+        width: 20px;
+        height: 20px;
+      }
+    }
+    #myScrollComtent{
+      background-color: #eeeeee;
+      opacity: 0.2
+    }
+
+
+}

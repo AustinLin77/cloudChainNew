@@ -1,0 +1,53 @@
+<!--
+  Generated template for the TotalInfomationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>发票信息</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only  (click)="submitFinancing()"  style="font-size: 3.733vw;color: #FF5F07">
+        提交
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div style="margin: 3.2vw;display: flex;margin-bottom: 1.6vw">
+    <div  class="myCol" (click)="goMergeInfomation()">
+      <div class="topDiv">
+        <img src="assets/imgs/mergeInfomation.png" class="leftPic">
+        <span>100%</span>
+      </div>
+      <div class="bottomDiv">汇总信息</div>
+    </div>
+    <div  class="myCol" (click)="goBasicInfomation()">
+      <div class="topDiv">
+        <img src="assets/imgs/basicInfomation.png" class="leftPic">
+        <span>{{status1}}</span>
+      </div>
+      <div class="bottomDiv">基本信息</div>
+    </div>
+  </div>
+  <div style="margin: 3.2vw;display: flex;margin-top: 1.6vw">
+    <div  class="myCol" (click)="goReceiveInfomation()">
+      <div class="topDiv">
+        <img src="assets/imgs/receiveInfomation.png" class="leftPic">
+        <span>100%</span>
+      </div>
+      <div class="bottomDiv">应收账款信息</div>
+    </div>
+    <div  class="myCol" (click)="goApplyInfomation()">
+      <div class="topDiv">
+        <img src="assets/imgs/applyInfomation.png" class="leftPic">
+        <span>{{status2}}</span>
+      </div>
+      <div class="bottomDiv">融资信息</div>
+    </div>
+  </div>
+</ion-content>

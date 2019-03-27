@@ -1,0 +1,113 @@
+<!--
+  Generated template for the AddAccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>应收账款新增</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="myShowTool()"  *ngIf="myShowSearch=='false'">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>卖方</div>
+    <div class="loopHeadM">
+      {{sellerName}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>类型</div>
+    <div class="loopHeadM" style="position: relative">
+      <!--<ion-select [(ngModel)]="type" placeholder="请选择类型" cancelText="取消" okText="确定" [selectOptions]="selectOptionsOne" class="mySelect" >-->
+        <!--<ion-option *ngFor="let option of typeData" value='{{option.value}}'>{{option.name}}</ion-option>-->
+      <!--</ion-select>-->
+      <select [(ngModel)]="type" style="color:#a8a8a8;width:26vw " >
+        <option value="" disabled selected hidden >请选择类型</option>
+        <option *ngFor="let option of typeData" [value]="option.value">{{option.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>买方</div>
+    <div class="loopHeadM" style="position: relative">
+      <!--<ion-select [(ngModel)]="buyerName" placeholder="请选择买方" cancelText="取消" okText="确定" [selectOptions]="selectOptionsTwo" class="mySelect"  (change)="selectDept()">-->
+        <!--<ion-option value='{{buyer.name}}' *ngFor="let buyer of buyerList">{{buyer.name}}</ion-option>-->
+      <!--</ion-select>-->
+      <select [(ngModel)]="buyerName" style="color:	#a8a8a8;width:26vw " (change)="selectDept()" >
+        <option value="" disabled selected hidden >请选择买方</option>
+        <option *ngFor="let buyer of buyerList" [value]="buyer.name">{{buyer.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="loopHead" style="position: relative">
+    <div class="loopHeadP"><span class="needed">*</span>融资申请日</div>
+    <div class="loopHeadM">
+      <input  class="myInput"  placeholder="请选择申请日期" [(ngModel)]="myDateStart" type="date" (change)="count()" id="firstIn" (blur)="addPalce()" (focus)="removePalce()">
+      <!--<ion-datetime displayFormat="YYYY-MM-DD" placeholder="请选择申请日期" [(ngModel)]="myDateStart" cancelText="取消" doneText="确定"> </ion-datetime>-->
+    </div>
+  </div>
+  <div class="loopHead" style="position: relative">
+    <div class="loopHeadP"><span class="needed">*</span>应收账款到期日</div>
+    <div class="loopHeadM">
+      <input  class="myInput" placeholder="请选择到期日期" [(ngModel)]="myDateEnd" type="date" (change)="count()" id="secondIn" (blur)="addPalce1()" (focus)="removePalce1()">
+      <!--<ion-datetime displayFormat="YYYY-MM-DD" placeholder="请选择到期日期" [(ngModel)]="myDateEnd" cancelText="取消" doneText="确定" (ionDone)="myCan()"> </ion-datetime>-->
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>贷款所属月份</div>
+    <div class="loopHeadM">
+      <input  class="myInput" [(ngModel)]="preferMonth" type="month" id="thirdIn" placeholder="请选择月份" (blur)="addPalce2()" (focus)="removePalce2()">
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>贷款对应买方事业部</div>
+    <div class="loopHeadM" style="position: relative">
+      <!--<ion-select [(ngModel)]="buyerName" placeholder="请选择事业部" cancelText="取消" okText="确定" [selectOptions]="selectOptionsThree" class="mySelect">-->
+        <!--<ion-option value='{{dept.name}}' *ngFor="let dept of deptList">{{dept.name}}</ion-option>-->
+      <!--</ion-select>-->
+      <select [(ngModel)]="dept" style="color:#a8a8a8"  >
+        <option value="" disabled selected hidden >请选择事业部</option>
+        <option *ngFor="let dept of deptList" [value]="dept.name">{{dept.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span style="color: red;margin-right: 5px;height: 100%;display:flex; align-items: center;width: 6px"></span>金额(元)</div>
+    <div class="loopHeadM">
+      {{totalPrice}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span style="color: red;margin-right: 5px;height: 100%;display:flex; align-items: center;width: 6px"></span>账期</div>
+    <div class="loopHeadM">
+      <!--<input  class="myInput" [(ngModel)]="countDays" disabled> <span style="margin-left: 5px">天</span>-->
+      {{countDays}}
+    </div>
+  </div>
+  <div class="loopHeadP" style="height: 50px;"><span style="color: red;margin-right: 5px;height: 100%;display:flex; align-items: center;width: 6px"></span>备注信息</div>
+  <textarea placeholder="请填写备注信息" class="myTips" [(ngModel)]="tips"></textarea>
+  <div class="myBottomDiv" >
+    <button ion-button class="myButton" (click)="submit()">提交</button>
+  </div>
+</ion-content>
+<div class="popover" *ngIf="showTool">
+  <!--<div class="item" (click)="newItem()">新增</div>-->
+  <div class="item" (click)="goDetailsList()">
+    <img src="assets/imgs/fapiao.png" class="rightIcon">
+    发票
+  </div>
+  <div class="item" (click)="addAccounts()">
+    <img src="assets/imgs/addfapiao.png" class="rightIcon">
+    添加
+  </div>
+</div>

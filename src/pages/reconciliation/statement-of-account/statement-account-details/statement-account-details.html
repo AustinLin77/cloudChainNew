@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>对账单详情</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+  <div id="placeMess">
+    <div class="palce"  *ngFor="let i of dataSource">
+         <!--*ngFor="let data of dataSource; let i = index"-->
+      <div class="title">明细行1</div>
+      <div class="pContent">
+        <ul>
+          <li><span>购方商品名称</span><span>去去去</span></li>
+          <li><span>购方物料单号</span><span>去去去</span></li>
+          <li><span>购方规格型号</span><span>去去去</span></li>
+          <li><span>单位</span><span>去去去</span></li>
+          <li><span>数量</span><span>去去去</span></li>
+          <li><span>单价</span><span>去去去</span></li>
+          <li><span>金额</span><span>去去去</span></li>
+          <li><span>税率</span><span>去去去</span></li>
+          <li><span>税额</span><span>去去去</span></li>
+          <li><span>采购订单号</span><span>去去去</span></li>
+          <li><span>入库单号</span><span>去去去</span></li>
+        </ul>
+      </div>
+    </div>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="加载中"
+      ></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+
+</ion-content>
+<ion-footer class="footer" *ngIf="type==0" (click)="generateCount()">
+  <ion-icon name="paper" class="myIcon"></ion-icon>
+  生成结算单
+</ion-footer>

@@ -1,0 +1,56 @@
+page-new-statement-of-account {
+  .myNavButton{
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  .myContentHead{
+    height: 42px;
+    width: 100%;
+    background-color: #eeeeee;
+    padding-left: 13px;
+    font-size: 13px;
+    color: #696969;
+    line-height: 42px;
+  }
+  .loopHead{
+    background-color: white;
+    height: 50px;
+    display: flex;
+    border-bottom: solid 1px #eeeeee;
+    .loopHeadP{
+      color: #000000;
+      font-family: 微软雅黑;
+      font-size: 14px;
+      min-width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 15px;
+      .needed{
+        color: red;
+        margin-right: 5px;
+        height: 100%;
+        display:flex;
+        align-items: center
+      }
+    }
+    .loopHeadM{
+      color: #9E9C9C;
+      font-family:  微软雅黑;
+      font-size: 14px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right:15px;
+      .myInput{
+        width: 100%;
+        border: none;
+        text-align: end;
+      }
+      .mySelect{
+        max-width: 80%;
+      }
+    }
+  }
+}

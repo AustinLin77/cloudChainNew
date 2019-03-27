@@ -1,0 +1,7 @@
+{
+  "name": "CloudChain",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,194 @@
+page-goodsdetails {
+  .slidesBorder{
+    height: 200px;
+    margin-top: 0;
+    width: 100%
+  }
+  .footer-md::before{
+    top:0;
+  }
+  .hot{
+    color: white;
+    background-color: #f53d3d;
+  }
+  .cold{
+    color: white;
+    background-color: #488aff;
+  }
+  .loopHead{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    height: 40px;
+    display: flex;
+    border-bottom: solid 1px #eeeeee
+  }
+  .loopHeadP{
+    font-family: 微软雅黑;
+    font-size: 14px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+  }
+  ::-webkit-scrollbar{
+    display:none;
+  }
+  .loopHeadM{
+    font-family:  微软雅黑;
+    font-size: 14px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+  }
+  .footer{
+    height: 50px;
+    color: white;
+    border-top: 1px solid #cccccc;
+  }
+  .ionGird{
+    height: 100%;
+    padding: 0
+  }
+  .ionCol{
+    height: 100%;
+    display: flex;
+    color: black;
+    padding: 0
+  }
+  .colInnerO{
+    flex: 1;
+    font-size: 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  .badge{
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    margin-top: -20px;
+    margin-left: -10px;
+    z-index: 99999;
+  }
+  .colInnerT{
+    height: 100%;
+    background-color: #FF858C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px
+  }
+  .colInnerTH{
+    height: 100%;
+    background-color: #FF525C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px
+  }
+  .picSty{
+    width: 100%;
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+  }
+  .dSty{
+    width: auto;
+    height: 70px;
+    margin: 10px;
+    border-bottom: solid #eeeeee 1px
+  }
+  .innerDSty{
+    display: flex;
+    align-items: center;
+    font-family: 微软雅黑;
+    width: 100%;
+
+  }
+  .nameSty{
+    font-weight:bold;
+    font-size: 16px;
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+  }
+  .popSty{
+    font-size: 14px;
+    height: 80%;
+    min-width: 25px;
+    text-align: center;
+    padding: 2px;
+    margin-left: 10px;
+  }
+  .priceSty{
+    margin-top: 10px;
+    color: deepskyblue
+  }
+  .propertySty{
+    background-color: #F0F0F0;
+    height: 25px;
+    line-height: 25px;
+    text-align:center;
+    color: #666666;
+  }
+  .picGroupSty{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  .decriSty{
+   width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-top: solid #eeeeee 2px;
+    padding-top: 10px
+  }
+  .navIcon{
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    color: black;
+    font-size: 18px;
+    z-index: 99999
+  }
+  .navbarSty{
+    text-align: center;
+    z-index: 9
+  }
+  .navbarStySec{
+    z-index: 9
+  }
+  .picBorder{
+    height: auto;
+    width: 90%;
+    max-height: 180px;
+    border: 1px solid #eeeeee
+  }
+  .myPic{
+    height: auto;
+    width: 100%;
+    max-height: 180px
+  }
+  .myCol{
+    padding: 0;
+    height: 100%
+  }
+  .decriInfo{
+    width: 90%;
+    height: 90%;
+    text-align: center
+  }
+}

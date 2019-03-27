@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title  *ngIf="myShowSearch=='false'">对账单</ion-title>
+    <ion-buttons end (click)="myShowTool()"  *ngIf="myShowSearch=='false'">
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar id="searchBar"
+                   placeholder="输入采购单号查询"
+                   [(ngModel)]="key"
+                   *ngIf="myShowSearch=='true'"
+                   style="font-size: 12px;">
+    </ion-searchbar>
+    <ion-buttons end (click)="submitSearch()" *ngIf="myShowSearch=='true'">
+      <button ion-button icon-only style="font-size: 14px;color: black">
+        确定
+      </button>
+    </ion-buttons>
+    <ion-buttons end (click)="closeSearch()" *ngIf="myShowSearch=='true'">
+      <button ion-button icon-only style="font-size: 14px;color: red;">
+        取消
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <!--<div class="myType ready" *ngIf="showSearchLoaction == 'false'" id="mynavaaa">-->
+    <!--<button   (click)="onPageTypeChange('1')" [class.already]="already == 'true'">-->
+      <!--已对账-->
+    <!--</button>-->
+    <!--<button style="" (click)="onPageTypeChange('0')" [class.unready]="unready == 'true'">-->
+      <!--未处理-->
+      <!--<ion-badge color="secondary" class="myBadge" *ngIf="unread!=0">{{unread}}</ion-badge>-->
+    <!--</button>-->
+  <!--</div>-->
+
+  <div class="searchLoaction" *ngIf="showSearchLoaction == 'true'">
+    <ul *ngFor="let data of searchLoactionData let i = index">
+      <li>
+        <span><ion-icon name="alarm"></ion-icon></span>
+        <span class="conter" (click)="setSearch(data)">{{data}}</span>
+        <span (click)="removeSearch(i)"><ion-icon name="close"></ion-icon></span>
+      </li>
+    </ul>
+  </div>
+  </ion-header>
+  <ion-content id="myStatementContent">
+    <!--<div *ngIf="!showNoContent" class="myContent">-->
+      <div class="content" *ngIf="showSearchLoaction == 'false'" >
+        <button ion-item *ngFor="let data of dataSource1"  class="myButton">
+          <div class="buttonHeader">
+            <span class="name">{{data.poCode}}</span>
+          </div>
+
+          <!--<div class="status">已对账{{data.state}}</div>-->
+          <div class="buttonEnd">
+            <div class="date ">创建日期:&nbsp;&nbsp;{{data.poDate}}</div>
+            <div class="endItem">购方公司:&nbsp;&nbsp;{{data.corporateBody}}</div>
+            <div class="endItem">购方部门:&nbsp;&nbsp;{{data.ouName}}</div>
+            <div class="endItem">总额:&nbsp;&nbsp;{{data.moneyAmount}}{{data.danwei}}</div>
+          </div>
+        </button>
+
+
+      </div>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="showInfinite">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="加载中"
+        ></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    <!--</div>-->
+
+    <div *ngIf="showNoContent" class="noContent">
+      <img src="assets/imgs/noContent.png" class="myNoContent">
+    </div>
+    <div *ngIf="ifLoading" class="haveGif">
+      <img src="assets/imgs/myLoadingGif.gif" class="myHaveGif">
+    </div>
+
+  </ion-content>
+
+<div class="popover" *ngIf="showTool">
+  <!--<div class="item" (click)="newItem()">新增</div>-->
+  <div class="item" (click)="sift()">筛选</div>
+  <div class="item" (click)="searchNum()">查询</div>
+</div>
+<div class="help" *ngIf="showSift" (click)="reset()"></div>
+<div class="siftDiv" *ngIf="showSift">
+  <div class="siftTitle">筛选</div>
+  <div class="condition">入库时间</div>
+  <div class="userInput">
+    <input class="inputNum" type="date" placeholder="开始区间" [(ngModel)]="siftStartDate" (focus)="removePalce()" id="firstIn" (blur)="addPalce()" >
+    <span style="margin-left: 5px;margin-right: 5px">—</span>
+    <input class="inputNum" type="date" placeholder="结束区间" [(ngModel)]="siftEndDate" (focus)="removePalce1()" id="secondIn" (blur)="addPalce1()">
+  </div>
+  <div class="condition">购方公司</div>
+  <div class="userInput">
+    <select [(ngModel)]="buyerCompany" style="color:	#a8a8a8" (change)="selectDept()" >
+      <option value="" disabled selected hidden >请选择购方公司</option>
+      <option *ngFor="let its of companyList" [value]="its">{{its}}</option>
+    </select>
+  </div>
+  <div class="condition">购方部门</div>
+  <div class="userInput">
+    <select [(ngModel)]="buyerDept" style="color:	#a8a8a8">
+      <option value="" disabled selected hidden >请选择购方部门</option>
+      <option *ngFor="let i of deptList" [value]="i">{{i}}</option>
+    </select>
+  </div>
+  <div class="condition">地点</div>
+  <div class="userInput">
+    <select [(ngModel)]="address" style="color:	#a8a8a8">
+      <option value="" disabled selected hidden >请选择地址</option>
+      <option *ngFor="let i of addressList" [value]="i">{{i}}</option>
+    </select>
+  </div>
+  <div class="condition">月份</div>
+  <div class="userInput">
+    <input  class="inputNum" [(ngModel)]="preferMonth" type="month" id="thirdIn" placeholder="请选择月份" (blur)="addPalce2()" (focus)="removePalce2()">
+  </div>
+  <div class="footer">
+    <ion-grid style="height: 100%;padding: 0">
+      <ion-row style="height: 100%">
+        <ion-col col-6 class="myCol">
+          <button  (click)="cancel()" class="myButtonSecond">重置</button>
+        </ion-col>
+        <ion-col col-6 class="myCol">
+          <button  (click)="confirm()" class="myButtonFirst">确定</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+page-total-infomation {
+  .myCol{
+    height: 21.766vw;
+    background-color: #303030;
+    color: #FFAF00;
+    border-radius: 1.6vw;
+    margin: 1.6vw;
+    width: calc(50% - 3.2vw);
+    .topDiv{
+      width: 100%;
+      height: 60%;
+      display: flex;
+      align-items: flex-end;
+      font-size:5.333vw ;
+      .leftPic{
+        margin-left: 9.333vw;
+        margin-right: 8.8vw;
+        width: 8.533vw;
+        height: 8.533vw;
+      }
+    }
+    .bottomDiv{
+      width: 100%;
+      height: 40%;
+      display: flex;
+      align-items: center;
+      font-size:3.733vw;
+      padding-left: 6.333vw;
+    }
+  }
+
+}

@@ -1,0 +1,81 @@
+<!--
+  Generated template for the GoldMainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>点金保理</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only  (click)="dianjinExit()"  style="color: #FF5F07; font-size: 3.733vw">
+        退出
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div class="slidesBorder">
+    <ion-slides pager autoplay="600" speed="800"  #sliders (click)="goDianJinIntroduce()" >
+      <ion-slide *ngFor="let slide of slides">
+        <img src="{{slide.imgPath}}" class="mySlidesPic" >
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 (click)="goitem('IssueManagementPage')"  *ngIf="roleName!='Vendor'">
+        <div class="ion-item">
+          <img src="assets/imgs/事项管理.png">
+          <span style="font-size: 3.733vw">事项管理</span>
+        </div>
+      </ion-col>
+      <ion-col col-3 (click)="goitem('AccountsReceivablePage')">
+        <div class="ion-item">
+          <img src="assets/imgs/账单申请.png">
+          <span style="font-size: 3.733vw">应收账款</span>
+        </div>
+      </ion-col>
+      <!--<ion-col col-4 (click)="goitem('FinancingApplicationPage')" *ngIf="roleName=='BusinessManager'">-->
+        <!--<div class="ion-item">-->
+          <!--<img src="assets/imgs/财务管理.png">-->
+          <!--<span>财务管理</span>-->
+        <!--</div>-->
+      <!--</ion-col>-->
+      <ion-col col-3 (click)="goitem('FinancingApplicationPage')" *ngIf="roleName!='BusinessManager'">
+      <div class="ion-item">
+          <img src="assets/imgs/融资申请.png">
+          <span style="font-size: 3.733vw">融资申请</span>
+        </div>
+      </ion-col>
+      <ion-col col-3 (click)="goitem('ContractSignaturePage')">
+        <div class="ion-item">
+          <img src="assets/imgs/合同签章.png">
+          <span style="font-size: 3.733vw">合同签章</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div style="border-bottom: solid 1px #eee"></div>
+  <div class="AppIntroduce">
+    应用介绍
+  </div>
+  <div class="roleIntroduce">
+    <span class="roleTitle">[多角色定制]</span>  根据角色的不同,定制了相应功能,让多个角色均可通过APP实现移动智能办公;
+  </div>
+
+  <div class="roleIntroduce">
+    <span class="roleTitle">[智能移动办公]</span>   解决公司日常办公需求,如审批、查看、新增企业信息、应收账款、融资申请等;
+  </div>
+  <div class="roleIntroduce">
+    <span class="roleTitle">[实现高效便捷工作]</span>   可进行多项业务查询、高效事项及财务管理、便捷客户维护等,让工作更加高效便捷;
+  </div>
+
+  <div class="zhanwu">
+    <img src="assets/imgs/zhanwu.png">
+  </div>
+</ion-content>

@@ -1,0 +1,95 @@
+<!--
+  Generated template for the FinancingApplicationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><span *ngIf="showSearch == 'false'">应收账款</span></ion-title>
+    <ion-searchbar  [(ngModel)]="myInput" *ngIf="showSearch == 'true'" style="height: 0.2rem"
+                    placeholder="请输入发票单号查询"
+    >
+
+    </ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="myShowTool()" *ngIf="cancelOrSearch == 1">
+        <ion-icon name="more"></ion-icon>
+      </button>
+      <!--<button ion-button icon-only  (click)="onCancelOrSearch(0)" *ngIf="cancelOrSearch == 1">-->
+        <!--<ion-icon  name="search"></ion-icon>-->
+      <!--</button>-->
+      <button ion-button icon-only  (click)="myGoSearch()" *ngIf="cancelOrSearch == 0" style="color: #FF5F07;font-size: 3.733vw">
+        确定
+      </button>
+      <button ion-button icon-only  (click)="onCancelOrSearch(1)" *ngIf="cancelOrSearch == 0" style="font-size: 3.733vw">
+        取消
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="myType ready"  id="mynavaaa">
+    <button   (click)="onPageTypeChange(99,infiniteScroll)" [class.already]="already == 99" *ngIf="roleName!='BusinessManager'">
+      全部
+    </button>
+    <button   (click)="onPageTypeChange(-1,infiniteScroll)" [class.already]="already == -1" *ngIf="roleName!='CoreEnterprise'" >
+      新建
+    </button>
+    <button   (click)="onPageTypeChange(0,infiniteScroll)" [class.already]="already == 0">
+      待审核
+    </button>
+    <button   (click)="onPageTypeChange(1,infiniteScroll)" [class.already]="already == 1">
+      审核通过
+    </button>
+    <button style="" (click)="onPageTypeChange(2,infiniteScroll)" [class.already]="already == 2">
+      已使用
+    </button>
+    <button style="" (click)="onPageTypeChange(10,infiniteScroll)" [class.already]="already == 10" *ngIf="roleName!='Vendor'">
+      未通过
+    </button>
+  </div>
+</ion-header>
+<ion-content id="myCon">
+  <div *ngIf="!showNoContent" class="myContent">
+    <div class="content">
+      <div *ngFor="let item of conlist"  class="listitem">
+        <div class="buttonHeader">
+          <span class="name">发票号 : {{item.receivableOrderNo}}</span>
+          <span [class.statusA]="item.expendStatus=='新建'"
+                [class.statusN]="item.expendStatus=='待审核'"
+                [class.statusB]="item.expendStatus=='审核通过'"
+                [class.statusC]="item.expendStatus=='已使用'"
+                [class.statusD]="item.expendStatus=='未通过'"
+
+          >{{item.expendStatus}}</span>
+        </div>
+        <button ion-item  (click)="itemTapped($event, item)">
+          <div class="itemmess "><img src="assets/imgs/买.png" style="height:  4vw;width: 4vw;margin-right: 2.666vw">{{item.buyerName}}</div>
+          <div class="itemmess"><img src="assets/imgs/卖.png" style="height:  4vw;width: 4vw;margin-right: 2.666vw">{{item.sellerName}}</div>
+          <div class="itemmess"><img src="assets/imgs/金.png" style="height:  4vw;width: 4vw;margin-right: 2.666vw">{{item.preTaxTotal}}</div>
+          <div class="itemmess"><img src="assets/imgs/时间.png" style="height:  4vw;width: 4vw;margin-right: 2.666vw">{{item.sendDate}}至{{item.receivedDate}}</div>
+        </button>
+      </div>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)" >
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="加载中"
+        ></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  </div>
+  <div *ngIf="showNoContent" class="noContent">
+    <img src="assets/imgs/noContent.png" class="myNoContent">
+  </div>
+</ion-content>
+<div class="popover" *ngIf="showTool">
+  <!--<div class="item" (click)="newItem()">新增</div>-->
+  <div class="item" (click)="onCancelOrSearch(0)">
+    <img src="assets/imgs/dianjinSearch.png" class="rightIcon">
+    搜索
+  </div>
+  <div class="item" (click)="addAccounts()" *ngIf="roleName=='Vendor'">
+    <img src="assets/imgs/addAccount.png" class="rightIcon">
+    新增
+  </div>
+</div>

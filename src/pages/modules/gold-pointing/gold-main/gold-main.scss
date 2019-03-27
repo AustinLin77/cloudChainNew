@@ -1,0 +1,54 @@
+page-gold-main {
+  margin: 0;
+  padding: 0;
+  .slidesBorder{
+    height: 48.266vw;
+    margin-top: 0;
+  }
+  .AppIntroduce{
+    margin-top: 3.733vw;
+    margin-left: 2.5vw;
+    height: 6.666vw;
+    width:21.56vw;
+    font-size:4.8vw ;
+    color:#3D3D3D ;
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+  }
+  .roleIntroduce{
+    color: #666666;
+    min-height: 9.5vw;
+    font-size: 3.2vw;
+    margin-top:2vw;
+    margin-left: 2.666vw;
+    margin-right: 2.666vw;
+    letter-spacing:0.3vw;
+    line-height: 18px;
+    .roleTitle{
+      margin-right: 0.2vw;
+      margin-left: 10px;
+      color: #E58800;
+    }
+  }
+  .zhanwu{
+    position: fixed;
+    bottom:0;
+  }
+  .ion-item {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 6px;
+    img {
+      width: 3.33rem;
+    }
+    span {
+      margin-top: 10px;
+    }
+  }
+  ion-grid{
+  }
+}

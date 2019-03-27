@@ -1,0 +1,41 @@
+<!--
+  Generated template for the DetailsListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>发票</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="myCon">
+  <div *ngIf="!showNoContent" class="myContent" style="background-color: #F0F0F0">
+    <div class="content">
+      <div *ngFor="let item of conlist"  class="listitem">
+        <div class="buttonHeader">
+          <span class="name">发票号码：{{item.receivableOrderNo}}</span>
+          <!--<span [class.statusC]="item.approveState=='审批中'" [class.statusN]="item.approveState=='已结束'">{{item.approveState}}</span>-->
+        </div>
+        <button ion-item  (click)="itemTapped($event, item)">
+          <div class="itemmess "><img src="assets/imgs/卖.png" style="height:  4vw;width: 4vw;margin-right: 2.666vw">{{headData.sellerName}}</div>
+          <div class="itemmess"><img src="assets/imgs/买.png" style="height:  4vw;width: 4vw;margin-right: 2.666vw">{{headData.buyerName}}</div>
+          <div class="itemmess"><img src="assets/imgs/金.png" style="height:  4vw;width: 4vw;margin-right: 2.666vw">{{item.preTaxTotal}}</div>
+        </button>
+      </div>
+      <!--<ion-infinite-scroll (ionInfinite)="doInfinite($event)" >-->
+        <!--<ion-infinite-scroll-content-->
+          <!--loadingSpinner="bubbles"-->
+          <!--loadingText="加载中"-->
+        <!--&gt;</ion-infinite-scroll-content>-->
+      <!--</ion-infinite-scroll>-->
+    </div>
+  </div>
+  <div *ngIf="showNoContent" class="noContent">
+    <img src="assets/imgs/noContent.png" class="myNoContent">
+  </div>
+</ion-content>

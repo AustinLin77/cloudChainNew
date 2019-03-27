@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>录入发票</ion-title>
+    <ion-buttons end class="myNavButton">
+      <button ion-button icon-only (click)="comfirm()">
+        确定
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>发票号</div>
+    <div class="loopHeadM">
+      <input placeholder="请填写发票号(8位)" class="myInput" [(ngModel)]="ticketNum" type="number"  >
+
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>发票代码</div>
+    <div class="loopHeadM">
+      <input placeholder="请填写发票代码(10位或者12位)" class="myInput" [(ngModel)]="ticketCode">
+    </div>
+  </div>
+  <div class="loopHead" style="position: relative">
+    <div class="loopHeadP"><span class="needed">*</span>开票时间</div>
+    <div class="loopHeadM">
+      <ion-datetime displayFormat="YYYY-MM-DD" placeholder="请选择需求日期" [(ngModel)]="ticketDate" cancelText="取消" doneText="确定"> </ion-datetime>
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP"><span class="needed">*</span>税前金额</div>
+    <div class="loopHeadM">
+      <input placeholder="请填写税前金额" class="myInput" [(ngModel)]="ticketCost">
+    </div>
+  </div>
+  <!--<div class="loopHead">-->
+    <!--<div class="loopHeadP">发票号</div>-->
+    <!--<div class="loopHeadM">-->
+      <!--<input placeholder="请填写发票号" class="myInput"  [(ngModel)]="ticketNum">-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="loopHead">-->
+    <!--<div class="loopHeadP">发票代码</div>-->
+    <!--<div class="loopHeadM">-->
+      <!--<input placeholder="请填写发票代码" class="myInput"  [(ngModel)]="ticketCode">-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="loopHead">-->
+    <!--<div class="loopHeadP">开票时间</div>-->
+      <!--<div class="loopHeadM">-->
+        <!--<input placeholder="请填写开票时间" class="myInput" type="date"  [(ngModel)]="ticketDate"  (focus)="removePalce()" id="firstIn" (blur)="addPalce()">-->
+      <!--</div>-->
+  <!--</div>-->
+  <!--<div class="loopHead">-->
+    <!--<div class="loopHeadP">税前金额</div>-->
+    <!--<div class="loopHeadM">-->
+      <!--<input placeholder="请填写税前金额" class="myInput"  [(ngModel)]="ticketCost">-->
+    <!--</div>-->
+  <!--</div>-->
+</ion-content>

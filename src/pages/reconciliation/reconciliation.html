@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>对账结算</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content  >
+  <div class="myContent" *ngFor="let data of dataSource" (click)="itemTapped($event, data)" >
+    <div class="start">{{data.key}}</div>
+    <div class="end" id="mynavaaa">
+      <!--<ion-badge color="secondary"   *ngIf="unread!=0" >{{unread}}</ion-badge>-->
+      <span class="imgContent">
+        <img src="assets/imgs/yunRight.png" class="myImg">
+      </span>
+    </div>
+  </div>
+</ion-content>
+

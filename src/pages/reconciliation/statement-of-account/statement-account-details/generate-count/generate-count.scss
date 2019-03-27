@@ -1,0 +1,153 @@
+page-generate-count {
+  .help{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: dimgrey;
+    opacity: 0.5;
+    z-index: 999;
+  }
+  .toast >div{
+    border-top: 1px solid #eeeeee;
+  }
+  .toast :first-child{
+    border-top: none;
+  }
+  .toast{
+    position: absolute;
+    left: 30px;
+    top:220px;
+    z-index: 9999;
+    width: 317px;
+    height: auto;
+    background-color: white;
+    .toastItem{
+      height: 97px;
+      width: 100%;
+      display: flex;
+      .leftItem{
+        width: 57px;
+        height: 100%;
+      }
+      .rightItem{
+        flex: 1;
+        height: 100%;
+        padding: 13px 0;
+        .itemTitle{
+          height: 24px;
+          font-size: 17px;
+          color: #000000;
+        }
+        .itemFirst{
+          margin-top: 7px;
+          height: 18px;
+          display: flex;
+          font-size: 13px;
+          color: #777777 ;
+          .itemName{
+            width: 100px;
+          }
+        }
+        .itemSecond{
+          margin-top: 2px;
+          height: 18px;
+          display: flex;
+          font-size: 13px;
+          color: #777777 ;
+          .itemName{
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+  .popover{
+    border: solid 1px #eeeeee;
+    position: fixed;
+    top:57px;
+    right: 17px;
+    height: 95px;
+    width: 130px;
+    z-index: 99999;
+    background-color: white;
+    opacity: 1;
+    .item{
+      width: 100%;
+      text-indent: 23px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+    }
+  }
+  .top{
+    height: 40px;
+    display: flex;
+  }
+  .top button{
+    flex: 1;
+    text-align: center;
+  }
+  .top button:hover{
+    border-radius: 0;
+    color: #007aff;
+    border-bottom: solid 3px #007aff;
+  }
+  .content{
+  }
+  button{
+    background: #fff;
+    border: none;
+    box-shadow: none;
+  }
+  .content ul li{
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px #eee;
+  }
+  .content ul li span:first-child{
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .content ul li div{
+    color: red;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+  }
+  .content ul li span:last-child{
+    flex:1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .palce .title{
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+    background: #eee;
+  }
+  .footer{
+    display: flex;
+    width: 100%;
+    height: 55px;
+    font-size: 14px;
+    border-top: 1px solid #eeeeee;
+    .footerItem{
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .myIcon{
+        font-size: 20px;
+        margin-right: 5px
+      }
+    }
+  }
+}

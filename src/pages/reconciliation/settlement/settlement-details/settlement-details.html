@@ -1,0 +1,159 @@
+<!--
+  Generated template for the SettlementDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>结算单详情</ion-title>
+    <!--<ion-buttons end (click)="myShowTool()"  *ngIf="type=='3'">-->
+      <!--<button ion-button icon-only>-->
+        <!--<ion-icon name="more"></ion-icon>-->
+      <!--</button>-->
+    <!--</ion-buttons>-->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+    <div class="palce"  >
+      <!--*ngFor="let data of dataSource; let i = index"-->
+      <div class="title">金额信息</div>
+      <div class="pContent">
+        <ul>
+          <li><span>金额总计(不含税)</span><span>{{moneyData.unTaxMoney}}</span></li>
+          <li><span>税额总计</span><span>{{moneyData.taxMoney}}</span></li>
+          <li><span>总计</span><span>{{moneyData.moneyAmount}}</span></li>
+        </ul>
+      </div>
+      <div class="title">头部信息</div>
+      <div class="pContent">
+        <ul id="mySpeUl">
+          <li><label >*</label><span>购方 : </span><span>{{headData.ouName}}</span></li>
+          <li><label >*</label><span>结算单编号 : </span><span>{{headData.settleCode}}</span></li>
+          <li><label >*</label><span>购方联系人 : </span><span>{{headData.buyer}}</span></li>
+          <li><label >*</label><span>创建日期 : </span><span>{{headData.createAt}}</span></li>
+        </ul>
+      </div>
+      <div *ngFor="let i of scrollData">
+        <div class="title">明细行{{i.lineNum}}</div>
+        <div class="pContent">
+          <ul>
+            <li><span>购方商品名称</span><span>{{i.itemName}}</span></li>
+            <li><span>购方物料单号</span><span>{{i.itemCode}}</span></li>
+            <li><span>购方规格型号</span><span style="word-break: break-all;text-align: right;">{{i.itemDesc}}</span></li>
+            <li><span>单位</span><span>{{i.unit}}</span></li>
+            <li><span>数量</span><span>{{i.qty}}</span></li>
+            <li><span>单价</span><span>{{i.price}}</span></li>
+            <li><span>金额</span><span>{{i.unTaxMoney}}</span></li>
+            <li><span>税率</span><span>{{i.taxCode}}</span></li>
+            <li><span>税额</span><span>{{i.taxMoney}}</span></li>
+            <li><span>入库单号</span><span>{{i.warehouseNum}}</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中"
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+<div class="popover" *ngIf="showTool">
+  <div class="item" (click)="handInput()">手工录入行</div>
+  <div class="item" (click)="changePrice()">调价</div>
+</div>
+<div class="help" *ngIf="showHelp"></div>
+<div class="toast"  *ngIf="showHelp">
+  <div class="toastItem" *ngFor="let i of dataSource" (click)="goChangePrice()">
+    <div class="leftItem">
+      <ion-item>
+        <ion-label>Daenerys Targaryen</ion-label>
+        <ion-checkbox color="dark" checked="false"></ion-checkbox>
+      </ion-item>
+    </div>
+    <div class="rightItem">
+      <div class="itemTitle">
+        明细行1
+      </div>
+      <div class="itemFirst">
+        <span class="itemName">购方商品名称:</span>
+        <span style="flex: 1;">显卡</span>
+      </div>
+      <div class="itemSecond">
+        <span class="itemName">购方物料单号:</span>
+        <span style="flex: 1;">1111111111111</span>
+      </div>
+    </div>
+  </div>
+</div>
+<ion-footer class="footer" *ngIf="type=='1'&&personStatus==0">
+  <!--<ion-icon name="close" class="myIcon"></ion-icon>-->
+  <div class="itemFirst" (click)="sendConfirm()">
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>-->
+    发送确认
+  </div>
+  <div class="middle"></div>
+  <div class="itemFirst"  (click)="userCancel()" style="background-color:#909090 ">
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>-->
+    取消
+  </div>
+</ion-footer>
+<!--<ion-footer class="footer" *ngIf="type=='1'&&personStatus==1">-->
+  <!--&lt;!&ndash;<ion-icon name="close" class="myIcon"></ion-icon>&ndash;&gt;-->
+  <!--发送确认-->
+<!--</ion-footer>-->
+<ion-footer class="footer" *ngIf="type=='0'&&personStatus==0">
+  <div class="itemFirst" (click)="generalPreTicket()">
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>-->
+    生成预制发票
+  </div>
+</ion-footer>
+<ion-footer class="footer" *ngIf="type=='0'&&personStatus==1">
+  <div class="itemFirst" (click)="cancelConfirm()">
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>-->
+    取消确认
+  </div>
+</ion-footer>
+<!--<ion-footer class="footer" *ngIf="type=='0'&&personStatus==1">-->
+  <!--<div class="itemFirst">-->
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>沟通-->
+  <!--</div>-->
+  <!--<div class="itemFirst" style="border-left: 10px solid white">-->
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>电话-->
+  <!--</div>-->
+<!--</ion-footer>-->
+<ion-footer class="footer" *ngIf="type=='5'&&personStatus==1">
+  <div class="itemFirst" (click)="userAction(1)">
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>-->
+    确认
+  </div>
+  <div class="middle">
+  </div>
+  <div class="itemFirst"  (click)="userAction(5)">
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>-->
+    驳回
+  </div>
+</ion-footer>
+<!--<ion-footer class="footer" *ngIf="type=='0'&&personStatus==0">-->
+  <!--<div class="itemFirst">-->
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>沟通-->
+  <!--</div>-->
+  <!--<div class="itemFirst">-->
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>电话-->
+  <!--</div>-->
+  <!--<div class="itemFirst">-->
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>驳回-->
+  <!--</div>-->
+  <!--<div class="itemFirst">-->
+    <!--<ion-icon name="close" class="myIcon"></ion-icon>通过-->
+  <!--</div>-->
+<!--</ion-footer>-->
+<!--<ion-footer class="footer" *ngIf="type=='3'&&personStatus==0">-->
+  <!--提交审批-->
+<!--</ion-footer>-->

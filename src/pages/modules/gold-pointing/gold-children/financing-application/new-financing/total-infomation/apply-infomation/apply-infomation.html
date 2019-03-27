@@ -1,0 +1,134 @@
+<!--
+  Generated template for the ApplyInfomationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>融资信息</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only  (click)="submitFinancing()"  style="font-size: 3.733vw;color: #FF5F07">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color: #eeeeee">
+  <div style="margin: 10px;border: 1px solid #eeeeee;">
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>合同编号</div>
+      <div class="loopHeadM">
+        {{financingNo}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>应收账款金额(元)</div>
+      <div class="loopHeadM">
+        {{cost}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>可融资比率(%)</div>
+      <div class="loopHeadM">
+        80%
+        <!--<input  class="myInput" [(ngModel)]="rate" placeholder="请填写可融资比率">-->
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>可融资金额(元)</div>
+      <div class="loopHeadM">
+        {{applyCost}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>综合利率(%/年)</div>
+      <div class="loopHeadM" >
+        12%
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>融资到期日</div>
+      <div class="loopHeadM">
+        {{myDateEnd}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>还款期限(天)</div>
+      <div class="loopHeadM">
+        {{countDays}}
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>还款方式</div>
+      <div class="loopHeadM" style="position: relative">
+        到期还款
+        <!--<ion-select [(ngModel)]="type" placeholder="请选择类型" cancelText="取消" okText="确定" [selectOptions]="selectOptionsOne" class="mySelect" >-->
+        <!--<ion-option *ngFor="let option of typeData[0].data" value='{{option}}'>{{option}}</ion-option>-->
+        <!--</ion-select>-->
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>发票总账数</div>
+      <div class="loopHeadM">
+        {{totalTickets}}
+      </div>
+    </div>
+  </div>
+  <div style="margin: 10px;border: 1px solid #eeeeee;">
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>收款账户</div>
+      <div class="loopHeadM" style="position: relative;">
+        <ion-select [(ngModel)]="account" placeholder="请选择收款账户" cancelText="取消" okText="确定" [selectOptions]="selectOptionsTwo" class="mySelect" >
+          <ion-option *ngFor="let option of accountData" value='{{option.accountName}}'>{{option.accountName}}</ion-option>
+        </ion-select>
+      </div>
+    </div>
+    <div class="loopHead" style="position: relative">
+      <div class="loopHeadP"><span class="needed">*</span>融资申请日</div>
+      <div class="loopHeadM">
+        <input  class="myInput"  placeholder="请选择融资申请日" [(ngModel)]="myDateStart" type="date" (change)="count()" id="firstIn" (blur)="addPalce()" (focus)="removePalce()">
+        <!--<ion-datetime displayFormat="YYYY-MM-DD" placeholder="请选择申请日期" [(ngModel)]="myDateStart" cancelText="取消" doneText="确定"> </ion-datetime>-->
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>保理融资方式</div>
+      <div class="loopHeadM" style="position: relative">
+        <ion-select [(ngModel)]="apply" placeholder="请选择保理融资方式" cancelText="取消" okText="确定" [selectOptions]="selectOptionsThree" class="mySelect" >
+          <ion-option *ngFor="let option of applyData" value='{{option}}'>{{option}}</ion-option>
+        </ion-select>
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>保理业务经理</div>
+      <div class="loopHeadM" (click)="mySelect()">
+        <span *ngIf="comfirmName==''">请选择保理业务经理</span>
+        <span>{{comfirmName}}</span>
+      </div>
+    </div>
+    <div class="loopHead">
+      <div class="loopHeadP"><span class="needed">*</span>实际融资金额(元)</div>
+      <div class="loopHeadM">
+        <input  class="myInput" [(ngModel)]="realCost" placeholder="请填写实际融资金额" type="number">
+      </div>
+    </div>
+  </div>
+</ion-content>
+<div class="help" *ngIf="showSelect" (click)="closeSelect()"></div>
+<div class="bottomSelect" *ngIf="showSelect">
+  <div class="bottomSelect_toolbar">
+    <ion-grid style="height: 100%;width: 100%">
+      <ion-row>
+        <ion-col col-4 class="myCol" style="color:#FF5F07;justify-content: flex-start" (click)="closeSelect()">取消</ion-col>
+        <ion-col col-4 class="myCol">选择业务经理</ion-col>
+        <ion-col col-4 class="myCol" style="color:#FF5F07;justify-content: flex-end" (click)="comfirm()">确定</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="personList">
+    <div *ngFor="let i of personList" class="personItem" (click)="changeList(i.name)">
+      {{i.name}}
+    </div>
+  </div>
+
+</div>

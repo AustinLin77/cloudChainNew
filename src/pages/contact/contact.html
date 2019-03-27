@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-navbar hideBackButton="true"   color="primary" style="text-align: center">
+    <ion-title >我的</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="myBorder"></div>
+  <div class="contentTop" (click)="myInformation()" *ngIf="showWhat==1">
+    <div class="contentTopBor">
+      <img src="{{data.logo}}" class="myLogo">
+      <span class="name">{{data.name}}</span>
+    </div>
+  </div>
+  <div class="contentTop" (click)="login()" *ngIf="showWhat==0">
+    <div class="contentTopBor">
+      <img src="assets/imgs/ic_personal_nor.png" style="width: 30px;height: 30px">
+      <span class="login"><a>登录/注册</a></span>
+    </div>
+  </div>
+  <div  class="contentBorderOne">
+    <div class="orderBorder" (click)="myShopList()" >
+      <div class="imgContent" >
+        <img src="assets/imgs/我的订单.png">
+      </div>
+      <div class="orderContent">
+        <div class="orderTitle">
+         我的订单
+        </div>
+      </div>
+    </div>
+    <div class="orderBorder" >
+      <div class="imgContent" >
+        <img src="assets/imgs/我的报价.png">
+      </div>
+      <div class="orderContent" (click)="myPurchase()" >
+        <div class="orderTitle">
+          我的报价
+        </div>
+      </div>
+    </div>
+    <div class="orderBorder" >
+      <div class="imgContent" >
+        <img src="assets/imgs/我收到的报价.png">
+      </div>
+      <div class="orderContent" (click)="myRecPurchase()">
+        <div class="orderTitle">
+          我收到的报价
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contentBorderTwo">
+    <div class="orderBorder" >
+      <div class="imgContent" >
+        <img src="assets/imgs/我发布的商品.png">
+      </div>
+      <div class="orderContent" (click)="myProduction()" >
+        <div class="orderTitle">
+          我发布的商品
+        </div>
+      </div>
+    </div>
+    <div class="orderBorder" >
+      <div class="imgContent" >
+        <img src="assets/imgs/我发布的需求.png">
+      </div>
+      <div class="orderContent" (click)="myApply()" >
+        <div class="orderTitle">
+          我发布的需求
+        </div>
+      </div>
+    </div>
+    <div class="orderBorder" >
+      <div class="imgContent" >
+        <img src="assets/imgs/我参加的集采.png">
+      </div>
+      <div class="orderContent" (click)="myInPurchase()" >
+        <div class="orderTitle">
+          我参与的集采
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="orderBorder" >
+    <div class="imgContent" >
+      <img src="assets/imgs/ic_download.png">
+    </div>
+    <div class="orderContent" (click)="download()">
+      <div class="orderTitle">
+        下载地址
+      </div>
+    </div>
+  </div>
+  <div class="orderBorder" >
+    <div class="imgContent" >
+      <img src="assets/imgs/ic_setting.png">
+    </div>
+    <div class="orderContent" (click)="set()">
+      <div class="orderTitle">
+        设置
+      </div>
+    </div>
+  </div>
+
+  <!--<div class="bottomContent" (click)="download()">-->
+    <!--<div class="bottomOrder">-->
+      <!--<img src="assets/imgs/ic_download.png" class="myPic">-->
+      <!--<span class="myTitle">下载地址</span>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="bottomContent">-->
+    <!--<div class="bottomOrder" (click)="set()">-->
+      <!--<img src="assets/imgs/ic_setting.png" class="myPic">-->
+      <!--<span class="myTitle">设置</span>-->
+    <!--</div>-->
+  <!--</div>-->
+</ion-content>

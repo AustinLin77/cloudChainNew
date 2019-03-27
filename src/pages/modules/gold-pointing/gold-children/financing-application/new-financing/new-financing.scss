@@ -1,0 +1,111 @@
+page-new-financing {
+  .myContent {
+    width: 100%;
+    height: calc(100% - 60px);
+    position: absolute;
+    background-color: #eeeeee;
+    bottom: 60px;
+    overflow: scroll;
+    .content {
+      padding: 1rem;
+      background-color: #f0f0f0;
+      .buttonHeader {
+        border-bottom: solid 1px #eee;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 1rem;
+        display: flex;
+        .name {
+          flex: 1;
+        }
+        .myCheckBox{
+          margin-right:10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .checkbox-ios .checkbox-icon{
+            border-color:#FF7F39 ;
+          }
+          .checkbox-md .checkbox-icon{
+            border-color:#FF7F39 ;
+          }
+          .checkbox-ios .checkbox-checked{
+            border-color:#FF7F39 ;
+            background-color: #FF7F39;
+          }
+          .checkbox-md-dark .checkbox-checked {
+            border-color: #FF7F39;
+            background-color: #FF7F39;
+          }
+        }
+      }
+      .listitem{
+        margin-bottom: 1rem;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        .itemmess{
+          display: flex;
+          align-items: center;
+          font-size: 1.4rem;
+          color: #666;
+          height: 2.5rem;
+        }
+        .item-inner {
+          border: none;
+        }
+      }
+    }
+  }
+
+  button{
+    background-color: #fff;
+  }
+
+  .noContent{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .myNoContent{
+      width: 120px;
+    }
+  }
+  .bottom{
+    font-size:3.2vw ;
+    color: #8A8A8A;
+    border-top: 1px solid #eeeeee;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 16vw;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    .submit{
+      height: 9vw;
+      border-radius: 8vw;
+      background-color:#FF7F39;
+      width: 19vw;
+      color: white;
+      font-size:3.733vw;
+      line-height: 9vw;
+      text-align: center
+    }
+    .checkbox-ios .checkbox-icon{
+      border-color:#FF7F39 ;
+    }
+    .checkbox-ios .checkbox-checked{
+      border-color:#FF7F39 ;
+      background-color: #FF7F39;
+    }
+    .checkbox-md .checkbox-icon{
+      border-color:#FF7F39 ;
+    }
+    .checkbox-md-dark .checkbox-checked {
+      border-color: #FF7F39;
+      background-color: #FF7F39;
+    }
+  }
+}

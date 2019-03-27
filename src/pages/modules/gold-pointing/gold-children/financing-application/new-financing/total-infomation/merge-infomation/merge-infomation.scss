@@ -1,0 +1,18 @@
+page-merge-infomation {
+  .grid{
+    padding: 0;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .myRow{
+    border-top: 1px solid #eeeeee;
+    width: 100%;
+    height: 12vw;
+    .myCol{
+      height: 12vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+}

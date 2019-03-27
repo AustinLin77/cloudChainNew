@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar >
+    <ion-title>应收账款详情</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+  <div class="loopHead">
+    <div class="loopHeadP">应收单号</div>
+    <div class="loopHeadM">
+     {{data.receivableOrderNo}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">卖方</div>
+    <div class="loopHeadM" >
+      {{data.sellerName}}
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">买方</div>
+    <div class="loopHeadM" >
+     {{data.buyerName}}
+    </div>
+  </div>
+  <div class="loopHead" style="position: relative">
+    <div class="loopHeadP">创建时间</div>
+    <div class="loopHeadM">
+      <span *ngIf="ifEdit">{{myDateStart}}</span>
+      <ion-datetime displayFormat="YYYY-MM-DD" placeholder="请选择创建日期" [(ngModel)]="myDateStart" cancelText="取消" doneText="确定" *ngIf="!ifEdit"> </ion-datetime>
+    </div>
+  </div>
+  <div class="loopHead" style="position: relative">
+    <div class="loopHeadP">到账日期</div>
+    <div class="loopHeadM">
+      <span *ngIf="ifEdit">{{myDateEnd}}</span>
+      <ion-datetime displayFormat="YYYY-MM-DD" placeholder="请选择到账日期" [(ngModel)]="myDateEnd" cancelText="取消" doneText="确定" *ngIf="!ifEdit"> </ion-datetime>
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">应收总额</div>
+    <div class="loopHeadM">
+      {{preTaxTotal}}
+      <!--<input  class="myInput" [(ngModel)]="preTaxTotal" [disabled]="ifEdit">-->
+    </div>
+  </div>
+  <div class="loopHead">
+    <div class="loopHeadP">状态</div>
+    <div class="loopHeadM" >
+      {{status}}
+    </div>
+  </div>
+  <div class="myBottomDiv" *ngIf="roleName=='Vendor'">
+    <button ion-button class="myButton" (click)="edit()" *ngIf="this.status=='新建'||this.status=='待审核'">修改</button>
+  </div>
+  <div class="myBottomDiv" *ngIf="roleName=='CoreEnterprise'">
+    <button ion-button class="myButton" (click)="edit()"  *ngIf="this.status=='待审核'">修改</button>
+    <div style="width: 13.333vw;height: 10vw"></div>
+    <button ion-button class="myButton" (click)="comfirma()" style="background-color: #FF7F39 " *ngIf="this.status=='待审核'">审核</button>
+  </div>
+  <div class="myBottomDiv" *ngIf="roleName=='BusinessManager'">
+    <button ion-button class="myButton" (click)="edit()"  *ngIf="this.status=='新建'||this.status=='待审核'||this.status=='未通过'">修改</button>
+    <div style="width: 13.333vw;height: 10vw" *ngIf="this.status=='新建'&& this.userName=='ywjl'"></div>
+    <button ion-button class="myButton" (click)="opinion()" style="background-color: #FF7F39 " *ngIf="this.status=='新建'&& this.userName=='ywjl'">确认</button>
+  </div>
+  <div class="myBottomDiv" *ngIf="ifEdit==false">
+    <button ion-button class="myButton" (click)="save()" >保存</button>
+    <div style="width: 13.333vw;height: 10vw"></div>
+    <button ion-button class="myButton" (click)="cancel()" style="background-color: #666666 ">取消</button>
+  </div>
+</ion-content>

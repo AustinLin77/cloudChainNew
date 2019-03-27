@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>全部功能</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+  <div class="itemName">供应链管理</div>
+  <div class="firstLoop">
+    <ion-grid class="myGrid">
+      <ion-row wrap style="height: 100%;">
+        <ion-col col-3 text-center *ngFor="let option of firstOptions"  class="myCol" (click)="goReconciliationPage(option)">
+          <div>
+            <img src="{{option.src}}" style="width: 8vw;height: 8vw">
+            <div style="font-size: 3.734vw">{{option.name}}</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="itemName">智能管理</div>
+  <div class="secondLoop">
+    <ion-grid class="myGrid">
+      <ion-row wrap style="height: 100%;">
+        <ion-col col-3 text-center *ngFor="let option of secondOptions"  class="myCol" >
+          <div>
+            <img src="{{option.src}}" style="width: 8vw;height: 8vw">
+            <div style="font-size: 3.734vw">{{option.name}}</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

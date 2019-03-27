@@ -1,0 +1,146 @@
+page-apply-infomation {
+  .alert-md .alert-radio-label {
+    /* overflow: hidden; */
+    word-break: break-all;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    /* text-overflow: ellipsis; */
+    /* white-space: nowrap; */
+    color: initial;
+    padding: 13px 26px;
+  }
+  .select-ios {
+    padding: 11px 5px 11px 0px;
+  }
+  .select-md {
+    padding: 13px 5px 13px 0px;
+  }
+  .select-text{
+    width: 200px;
+    text-align: right;
+    white-space: pre-wrap;
+  }
+  .needed{
+    color: red;
+    margin-right: 5px;
+    height: 100%;
+    display:flex;
+    align-items: center
+  }
+  .dSty{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-family: 微软雅黑;
+    font-weight:bold;
+  }
+  .loopHead{
+    background-color: white;
+    min-height: 50px;
+
+    display: flex;
+    border-bottom: solid 1px #eeeeee
+  }
+  .loopHeadP{
+    color: #9E9C9C;
+    font-family: 微软雅黑;
+    font-size: 14px;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px
+  }
+  ::-webkit-scrollbar{
+    display:none;
+  }
+  .loopHeadM{
+    color: #9E9C9C;
+    font-family:  微软雅黑;
+    font-size: 14px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right:15px
+  }
+  .myInput{
+    width: 100%;
+    border: none;
+    text-align: end;
+    background-color: white;
+  }
+  .mySelect{
+    max-width: 85%;
+  }
+  .help{
+    position: fixed;
+    top:52px;
+    z-index: 9998;
+    opacity: 0.6;
+    background-color: dimgrey;
+    width: 100%;
+    height: calc(100% - 52px);
+  }
+  .bottomSelect{
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 350px;
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    -webkit-animation:bottomEaseinAnimate  linear 0.5s ;
+    -moz-animation:bottomEaseinAnimate linear 0.5s; /* Firefox */
+    -o-animation:bottomEaseinAnimate linear 0.5s; /* Opera */
+    .bottomSelect_toolbar{
+      width: 100%;
+      height: 49px;
+      border-bottom: 1px solid #eeeeee;
+      position: absolute;
+      top:0;
+      .myCol{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4.266vw;
+      }
+    }
+    .personList{
+      position: absolute;
+      top:50px;
+      width: 100%;
+      height: 300px;
+      overflow: scroll;
+      .personItem{
+        width: 100%;
+        height: 49px;
+        border-bottom: 1px solid #eeeeee;
+        line-height: 49px;
+        font-size:3.733vw ;
+        padding-left:2.666vw ;
+      }
+    }
+    input[type="date"]:before{
+      content: attr(placeholder);
+      color:darkgray;
+    }
+  }
+  @keyframes bottomEaseinAnimate {
+    0%{
+      height: 0;
+    }
+    100%{
+      height: 350px;
+    }
+  }
+}
